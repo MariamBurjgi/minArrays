@@ -1,0 +1,31 @@
+
+import java.util.*;
+
+public class Solution {
+    public int solution(int[] M) {
+
+        int smallestPositiveInt = 1;
+
+        if(M.length == 0) {
+            return smallestPositiveInt;
+        }
+
+        Arrays.sort(M);
+
+        if(M[0] > 1) {
+            return smallestPositiveInt;
+        }
+
+        if(M[M.length - 1] <= 0 ) {
+            return smallestPositiveInt;
+        }
+
+        for (int i : M) {
+            if (i == smallestPositiveInt) {
+                smallestPositiveInt++;
+            }
+        }
+
+        return smallestPositiveInt;
+    }
+}
